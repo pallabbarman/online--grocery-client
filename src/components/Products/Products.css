@@ -1,0 +1,15 @@
+.product-card {
+    width: 19rem;
+    margin: 30px 0;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px !important;
+}
+.product-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px !important;
+}
+.card:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}

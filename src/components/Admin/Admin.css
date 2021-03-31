@@ -1,35 +1,46 @@
-.sidenav {
-    margin-top: 55px;
-    height: 100%;
-    width: 220px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
     background-color: mintcream;
-    overflow-x: hidden;
-    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
 }
 
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: black;
+.sidebar a {
     display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
 }
 
-.main {
-    margin-top: 60px;
-    margin-left: 250px;
-    padding: 0px 10px;
+.sidebar a:hover:not(.active) {
+    background-color: whitesmoke;
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
     }
-    .sidenav a {
-        font-size: 18px;
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
     }
 }

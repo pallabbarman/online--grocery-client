@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const ManageProduct = () => {
     return (
         <>
-            <div className="sidenav">
-                <Link to="/addProduct">Add Product</Link>
+            <div className="sidebar">
+                <Link to="/addProducts">Add Product</Link>
                 <Link to="/manageProduct">Manage Product</Link>
             </div>
-            <div className="main">
+            <div className="content">
                 <h1>Manage Product</h1>
             </div>
         </>
