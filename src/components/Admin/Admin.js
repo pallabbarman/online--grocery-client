@@ -5,10 +5,17 @@ import "./Admin.css";
 
 const Admin = () => {
     return (
-        <div className="sidebar">
+        <div className="mt-5">
+            <div className="sidebar">
+                <Container>
+                    <Link to="/addProducts">Add Product</Link>
+                    <Link to="/manageProduct">Manage Product</Link>
+                </Container>
+            </div>
             <Container>
-                <Link to="/addProducts">Add Product</Link>
-                <Link to="/manageProduct">Manage Product</Link>
+                <h1 style={{ textAlign: "center", marginTop: "50px" }}>
+                    Welcome Admin
+                </h1>
             </Container>
         </div>
     );

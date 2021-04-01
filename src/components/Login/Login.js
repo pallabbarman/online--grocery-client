@@ -5,7 +5,7 @@ import {
     initializeLoginFramework,
 } from "./LoginManager";
 import { UserContext } from "../../App";
-import { Button, Container } from "react-bootstrap";
+import { Button, Col, Container } from "react-bootstrap";
 import "./Login.css";
 import { useHistory, useLocation } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,24 +44,28 @@ const Login = () => {
     };
 
     return (
-        <Container className="login">
-            {user.isSignIn ? (
-                <Button
-                    onClick={signOut}
-                    type="button"
-                    variant="outline-primary"
-                >
-                    Sign Out
-                </Button>
-            ) : (
-                <Button
-                    onClick={googleSignIn}
-                    type="button"
-                    variant="outline-primary"
-                >
-                    <FontAwesomeIcon icon={faGoogle} /> Sign In with Google
-                </Button>
-            )}
+        <Container className="justify-content-center" >
+            <Col md={6} className="mx-auto login">
+                <h1>Login</h1>
+                <br/>
+                {user.isSignIn ? (
+                    <Button
+                        onClick={signOut}
+                        type="button"
+                        variant="outline-primary"
+                    >
+                        Sign Out
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={googleSignIn}
+                        type="button"
+                        variant="outline-primary"
+                    >
+                        <FontAwesomeIcon icon={faGoogle} /> Sign In with Google
+                    </Button>
+                )}
+            </Col>
         </Container>
     );
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Products.css";
 
 const Products = (props) => {
     const { product } = props;
-    const { name, imageURL, price } = product;
+    const { _id, name, imageURL, price } = product;
     console.log(product);
     return (
         <Col md={4} className="d-flex justify-content-center">
@@ -20,7 +21,13 @@ const Products = (props) => {
                             <h5>$ {price}</h5>
                         </Col>
                         <Col md={6}>
-                            <Button variant="outline-primary">Buy Now</Button>
+                            <Button
+                                variant="outline-primary"
+                                as={Link}
+                                to={`checkout/${_id}`}
+                            >
+                                Buy Now
+                            </Button>
                         </Col>
                     </Row>
                 </Card.Body>

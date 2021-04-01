@@ -5,7 +5,7 @@ import "./Header.css";
 
 const Header = () => {
     return (
-        <Navbar expand="lg" className="nav">
+        <Navbar expand="lg" className="nav" fixed="top">
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     Online Grocery

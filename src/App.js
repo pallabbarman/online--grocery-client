@@ -10,6 +10,7 @@ import Admin from "./components/Admin/Admin";
 import Orders from "./components/Orders/Orders";
 import AddProduct from "./components/AddProduct/AddProduct";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
+import CheckOut from "./components/CheckOut/CheckOut";
 
 export const UserContext = createContext();
 
@@ -40,6 +41,9 @@ function App() {
                     </PrivateRoute>
                     <PrivateRoute path="/manageProduct">
                         <ManageProduct />
+                    </PrivateRoute>
+                    <PrivateRoute path="/checkout/:_id">
+                        <CheckOut />
                     </PrivateRoute>
                 </Switch>
             </Router>

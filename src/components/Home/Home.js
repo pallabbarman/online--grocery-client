@@ -11,7 +11,7 @@ const Home = () => {
             .then((data) => setProducts(data));
     }, []);
     return (
-        <Container>
+        <Container className="mt-5">
             <Row>
                 {products.map((product) => (
                     <Products product={product} key={product._id}></Products>

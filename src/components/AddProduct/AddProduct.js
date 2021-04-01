@@ -43,7 +43,7 @@ const AddProduct = () => {
     };
 
     return (
-        <div>
+        <div className="mt-5">
             <div className="sidebar">
                 <Link to="/addProducts">Add Product</Link>
                 <Link to="/manageProduct">Manage Product</Link>
