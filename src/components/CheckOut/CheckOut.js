@@ -1,24 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { useParams } from "react-router";
+import { UserContext } from "../../App";
 import "./Checkout.css";
 
 const CheckOut = () => {
     const { _id } = useParams();
-    console.log(_id);
     const [product, setProduct] = useState([]);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${_id}`)
             .then((res) => res.json())
-            .then((data) => setProduct(data))
-            .catch((err) => alert("Somethings went wrong! Please try again!"));
+            .then((data) => setProduct(data));
     }, [_id]);
 
     const checkOutProduct = product.find(
         (pd) => parseInt(pd._id) === parseInt(_id)
     );
-    console.log(checkOutProduct);
+
+    const handleOrder = () => {
+        const newOrder = {
+            ...loggedInUser,
+            ...checkOutProduct,
+            orderTime: new Date(),
+        };
+        fetch("http://localhost:5000/addOrder", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newOrder),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                alert("Your products ordered successfully");
+            });
+    };
 
     return (
         <Container className="checkout">
@@ -39,7 +56,7 @@ const CheckOut = () => {
                 <h4>$ {checkOutProduct?.price}</h4>
             </div>
             <br />
-            <Button variant="outline-primary">
+            <Button onClick={handleOrder} variant="outline-primary">
                 Checkout
             </Button>
         </Container>

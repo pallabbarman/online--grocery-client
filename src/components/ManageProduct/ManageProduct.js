@@ -4,7 +4,6 @@ import ShowManageProduct from "../ShowManageProduct/ShowManageProduct";
 
 const ManageProduct = () => {
     const [products, setProducts] = useState([]);
-    console.log(products.map((pd) => pd));
 
     useEffect(() => {
         fetch("http://localhost:5000/products")
@@ -26,7 +25,7 @@ const ManageProduct = () => {
                     <h4>Action</h4>
                 </div>
                 {products.map((pd) => (
-                    <ShowManageProduct pd={pd}></ShowManageProduct>
+                    <ShowManageProduct pd={pd} key={pd._id}></ShowManageProduct>
                 ))}
             </div>
         </div>

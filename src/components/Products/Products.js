@@ -6,7 +6,7 @@ import "./Products.css";
 const Products = (props) => {
     const { product } = props;
     const { _id, name, imageURL, price } = product;
-    console.log(product);
+    
     return (
         <Col md={4} className="d-flex justify-content-center">
             <Card className="product-card">

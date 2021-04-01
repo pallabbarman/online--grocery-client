@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from "react";
+import OrderDetails from "../OrderDetails/OrderDetails";
+import { UserContext } from "../../App";
 
 const Orders = () => {
+    const [orders, setOrders] = useState([]);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/orders")
+            .then((res) => res.json())
+            .then((data) => setOrders(data));
+    }, []);
+
     return (
-        <div>
-            <h1>Your orders here</h1>
+        <div className="mt-5 container">
+            <h1 style={{ textAlign: "center" }}>Your orders here</h1>
+            <br />
+            <br />
+            <div className="d-flex justify-content-between">
+                <h4>Name</h4>
+                <h4>Price</h4>
+                <h4>Wight</h4>
+                <h4>Date</h4>
+            </div>
+            {orders.map((order) => (
+                <OrderDetails key={order._id} order={order}></OrderDetails>
+            ))}
         </div>
     );
 };
