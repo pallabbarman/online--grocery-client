@@ -5,12 +5,12 @@ import { UserContext } from "../../App";
 const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
+    console.log(loggedInUser.email);
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("http://localhost:5000/orders?email=" + loggedInUser.email)
             .then((res) => res.json())
             .then((data) => setOrders(data));
-    }, []);
+    }, [loggedInUser.email]);
 
     return (
         <div className="mt-5 container">

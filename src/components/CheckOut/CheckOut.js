@@ -22,7 +22,10 @@ const CheckOut = () => {
     const handleOrder = () => {
         const newOrder = {
             ...loggedInUser,
-            ...checkOutProduct,
+            name: checkOutProduct?.name,
+            price: checkOutProduct?.price,
+            image: checkOutProduct?.imageURL,
+            wight: checkOutProduct?.wight,
             orderTime: new Date(),
         };
         fetch("http://localhost:5000/addOrder", {
