@@ -9,7 +9,8 @@ const Orders = () => {
     useEffect(() => {
         fetch("http://localhost:5000/orders?email=" + loggedInUser.email)
             .then((res) => res.json())
-            .then((data) => setOrders(data));
+            .then((data) => setOrders(data))
+            .catch((err) => console.log(err));
     }, [loggedInUser.email]);
 
     return (

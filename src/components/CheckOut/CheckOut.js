@@ -12,7 +12,8 @@ const CheckOut = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/product/${_id}`)
             .then((res) => res.json())
-            .then((data) => setProduct(data));
+            .then((data) => setProduct(data))
+            .catch((err) => console.log(err));
     }, [_id]);
 
     const checkOutProduct = product.find(
@@ -37,7 +38,8 @@ const CheckOut = () => {
             .then((data) => {
                 console.log(data);
                 alert("Your products ordered successfully");
-            });
+            })
+            .catch((err) => console.log(err));
     };
 
     return (

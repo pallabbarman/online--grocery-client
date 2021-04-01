@@ -12,7 +12,8 @@ const ShowManageProduct = (props) => {
             method: "DELETE",
         })
             .then((res) => res.json())
-            .then((data) => console.log("delete", data));
+            .then((data) => console.log("delete", data))
+            .catch((err) => console.log(err));
     };
     return (
         <Container className="mt-5">
