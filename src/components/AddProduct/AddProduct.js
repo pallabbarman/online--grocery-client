@@ -30,7 +30,7 @@ const AddProduct = () => {
             wight: data.wight,
         };
 
-        const url = `http://localhost:5000/addProduct`;
+        const url = `https://web-online-grocery.herokuapp.com/addProduct`;
 
         console.log(productData);
         fetch(url, {

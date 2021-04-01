@@ -10,7 +10,7 @@ const CheckOut = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${_id}`)
+        fetch(`https://web-online-grocery.herokuapp.com/product/${_id}`)
             .then((res) => res.json())
             .then((data) => setProduct(data))
             .catch((err) => console.log(err));
@@ -29,7 +29,7 @@ const CheckOut = () => {
             wight: checkOutProduct?.wight,
             orderTime: new Date(),
         };
-        fetch("http://localhost:5000/addOrder", {
+        fetch("https://web-online-grocery.herokuapp.com/addOrder", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newOrder),

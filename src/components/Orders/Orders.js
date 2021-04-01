@@ -7,7 +7,10 @@ const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     console.log(loggedInUser.email);
     useEffect(() => {
-        fetch("http://localhost:5000/orders?email=" + loggedInUser.email)
+        fetch(
+            "https://web-online-grocery.herokuapp.com/orders?email=" +
+                loggedInUser.email
+        )
             .then((res) => res.json())
             .then((data) => setOrders(data))
             .catch((err) => console.log(err));
@@ -19,6 +22,7 @@ const Orders = () => {
             <br />
             <br />
             <div className="d-flex justify-content-between">
+                <h4>Email</h4>
                 <h4>Name</h4>
                 <h4>Price</h4>
                 <h4>Wight</h4>

@@ -6,7 +6,7 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("https://web-online-grocery.herokuapp.com/products")
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((err) => console.log(err));
@@ -21,7 +21,7 @@ const ManageProduct = () => {
             <div className="content mt-5">
                 <div className="d-flex justify-content-between container mt-5">
                     <h4>Name</h4>
-                    <h4>Wight</h4>
+                    <h4>Wight (kg)</h4>
                     <h4>Price</h4>
                     <h4>Action</h4>
                 </div>

@@ -8,7 +8,7 @@ const ShowManageProduct = (props) => {
     const { _id, name, wight, price } = pd;
 
     const deleteProduct = (_id) => {
-        fetch(`http://localhost:5000/delete/${_id}`, {
+        fetch(`https://web-online-grocery.herokuapp.com/delete/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

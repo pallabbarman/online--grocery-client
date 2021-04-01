@@ -11,6 +11,7 @@ import Orders from "./components/Orders/Orders";
 import AddProduct from "./components/AddProduct/AddProduct";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
 import CheckOut from "./components/CheckOut/CheckOut";
+import NotFound from "./components/NotFound/NotFound";
 
 export const UserContext = createContext();
 
@@ -45,6 +46,9 @@ function App() {
                     <PrivateRoute path="/checkout/:_id">
                         <CheckOut />
                     </PrivateRoute>
+                    <Route path="*">
+                        <NotFound></NotFound>
+                    </Route>
                 </Switch>
             </Router>
         </UserContext.Provider>
