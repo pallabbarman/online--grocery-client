@@ -3,6 +3,7 @@
     margin: 30px 0;
     box-shadow: 5px 5px 10px gray;
     border-radius: 10px !important;
+    background-color: mintcream !important;
 }
 .product-img {
     height: 300px;
@@ -10,6 +11,6 @@
     border-radius: 10px !important;
 }
 .card:hover {
-    background-color: whitesmoke;
+    background-color: whitesmoke !important;
     cursor: pointer;
 }

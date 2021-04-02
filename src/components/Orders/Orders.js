@@ -23,7 +23,7 @@ const Orders = () => {
             <br />
             <div className="d-flex justify-content-between">
                 <h4>Email Address</h4>
-                <h4>Name</h4>
+                <h4>Product Name</h4>
                 <h4>Price</h4>
                 <h4>Wight</h4>
                 <h4>Date</h4>
