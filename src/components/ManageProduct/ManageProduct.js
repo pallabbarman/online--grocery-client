@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faTasks } from "@fortawesome/free-solid-svg-icons";
 import ShowManageProduct from "../ShowManageProduct/ShowManageProduct";
 
 const ManageProduct = () => {
@@ -10,13 +13,17 @@ const ManageProduct = () => {
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((err) => console.log(err));
-    }, []);
+    }, [products]);
 
     return (
         <div className="mt-5">
             <div className="sidebar">
-                <Link to="/addProducts">Add Product</Link>
-                <Link to="/manageProduct">Manage Product</Link>
+                <Link to="/addProducts">
+                    <FontAwesomeIcon icon={faPlus} /> Add Product
+                </Link>
+                <Link to="/manageProduct">
+                    <FontAwesomeIcon icon={faTasks} /> Manage Product
+                </Link>
             </div>
             <div className="content mt-5">
                 <div className="d-flex justify-content-between container mt-5">

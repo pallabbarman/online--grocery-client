@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faTasks } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddProduct = () => {
     const { register, handleSubmit, errors } = useForm();
@@ -45,8 +48,12 @@ const AddProduct = () => {
     return (
         <div className="mt-5">
             <div className="sidebar">
-                <Link to="/addProducts">Add Product</Link>
-                <Link to="/manageProduct">Manage Product</Link>
+                <Link to="/addProducts">
+                    <FontAwesomeIcon icon={faPlus} /> Add Product
+                </Link>
+                <Link to="/manageProduct">
+                    <FontAwesomeIcon icon={faTasks} /> Manage Product
+                </Link>
             </div>
             <div className="content">
                 <form onSubmit={handleSubmit(onSubmit)}>
