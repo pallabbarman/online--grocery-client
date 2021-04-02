@@ -25,6 +25,7 @@ const ManageProduct = () => {
                     <h4>Price</h4>
                     <h4>Action</h4>
                 </div>
+                <hr />
                 {products.map((pd) => (
                     <ShowManageProduct pd={pd} key={pd._id}></ShowManageProduct>
                 ))}
